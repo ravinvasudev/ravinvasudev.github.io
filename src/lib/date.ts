@@ -18,3 +18,12 @@ export function formatPeriod(
 ): string {
   return `${formatMonth(startDate)} - ${formatMonth(endDate)}`;
 }
+
+export function formatPostDate(isoDate: string): string {
+  return new Date(isoDate).toLocaleDateString("en-CA", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}

@@ -1,0 +1,37 @@
+---
+title: "Cutting Deployment Cycle Time by 40% Without a Rewrite"
+publishedAt: "2026-04-02"
+summary: "How standardizing GitOps delivery across a 100+ microservice estate on EKS removed release friction without pausing feature work."
+tags: ["GitOps", "Kubernetes", "DevSecOps", "Delivery"]
+canonicalUrl: "https://ravinvasudev.com/blog/gitops-deployment-velocity"
+featured: true
+---
+
+A platform with 100+ microservices does not have one deployment problem. It has a hundred slightly different ones. Every team had its own pipeline dialect, its own rollback story and its own definition of "deployed".
+
+## Standardize the contract, not the implementation
+
+The first move was not tooling. It was defining what every service must expose: a health contract, a versioned artifact, a declarative manifest and a single environment promotion path. Teams kept ownership of their code. The platform owned the path to production.
+
+## Make the desired state the only state
+
+Moving to ArgoCD meant the cluster state was reconciled from Git, not from whoever ran the last pipeline. That single change eliminated an entire category of incidents caused by drift between environments.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+```
+
+## Where the 40% actually came from
+
+- Removing manual promotion approvals for changes that passed automated policy checks
+- Parallelizing build stages and caching dependency resolution
+- Replacing bespoke deploy scripts with a shared Helm chart library
+- Making rollback a Git revert instead of an incident bridge
+
+None of that required a rewrite. It required agreeing on one path and making it the easiest one to take.

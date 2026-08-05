@@ -1,30 +1,28 @@
+export interface SocialLinks {
+  linkedin: string;
+  github: string;
+  email: string;
+}
+
 export interface Profile {
   name: string;
-  headline: string;
-  location: {
-    city: string;
-    region: string;
-    country: string;
-  };
-  contact: {
-    email: string;
-    phone: string;
-    linkedin: string;
-  };
+  title: string;
+  location: string;
   totalExperience: string;
+  positioningStatement: string;
+  recruiterSummary: string;
+  narrative: string[];
+  leadershipPhilosophy: string[];
   industries: string[];
-  summary: string[];
-  careerHighlights: string[];
-  cta: {
-    primary: string;
-    secondary: string;
-    tertiary: string;
-  };
+  resumeUrl: string;
+  socials: SocialLinks;
 }
 
 export interface Metric {
+  id: string;
   label: string;
   value: string;
+  description: string;
 }
 
 export interface ExperienceItem {
@@ -35,10 +33,10 @@ export interface ExperienceItem {
   startDate: string;
   endDate: string | null;
   isCurrent: boolean;
-  summary: string;
+  coreFocus: string;
   highlights: string[];
-  tech: string[];
-  metrics: Metric[];
+  metrics: string[];
+  techStack: string[];
 }
 
 export interface ProjectItem {
@@ -49,29 +47,54 @@ export interface ProjectItem {
   role: string;
   problem: string;
   solution: string;
-  architecture: string[];
-  tech: string[];
   impact: string[];
+  architecture: string[];
+  techStack: string[];
+  featured: boolean;
 }
 
 export interface SkillCategory {
+  id: string;
   category: string;
+  focus: string;
   skills: string[];
 }
 
 export interface Achievement {
   id: string;
-  type: string;
   title: string;
-  organization?: string;
-  timeframe?: string;
-  value?: string;
+  organization: string;
+  timeframe: string;
   description: string;
 }
 
 export interface EducationItem {
+  id: string;
   degree: string;
   institution: string;
   location: string;
-  graduationYear: number | string | null;
+  graduationYear: string;
+}
+
+export interface PostFrontmatter {
+  title: string;
+  publishedAt: string;
+  summary: string;
+  tags: string[];
+  canonicalUrl: string;
+  featured: boolean;
+}
+
+export interface Post extends PostFrontmatter {
+  slug: string;
+  readingMinutes: number;
+}
+
+export interface PostWithContent extends Post {
+  content: string;
+}
+
+export interface NavItem {
+  href: string;
+  label: string;
 }
