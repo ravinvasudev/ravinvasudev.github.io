@@ -1,0 +1,72 @@
+[
+  {
+    "category": "Enterprise and Cloud Architecture",
+    "skills": [
+      "Cloud Strategy",
+      "Cloud Governance",
+      "Landing Zones",
+      "Multi-Tenant SaaS Architecture",
+      "Enterprise Architecture",
+      "Architecture Review Boards",
+      "Security and Compliance (ISO27001, GDPR)"
+    ]
+  },
+  {
+    "category": "Platform Engineering and DevSecOps",
+    "skills": [
+      "AWS",
+      "Kubernetes (EKS)",
+      "Terraform",
+      "GitOps",
+      "ArgoCD",
+      "Helm",
+      "CI/CD Automation",
+      "DevSecOps",
+      "Zero-Downtime Deployment Practices"
+    ]
+  },
+  {
+    "category": "Application and Distributed Systems",
+    "skills": [
+      "Microservices",
+      "Event-Driven Architecture",
+      "Kafka",
+      "Java",
+      "Spring Boot",
+      "Python",
+      "TypeScript",
+      "REST",
+      "gRPC",
+      "Redis",
+      "SQL",
+      "NoSQL",
+      "API-First Design",
+      "Authentication",
+      "IAM",
+      "SSO",
+      "OTP"
+    ]
+  },
+  {
+    "category": "Observability and Reliability",
+    "skills": [
+      "Prometheus",
+      "Grafana",
+      "ELK",
+      "OpenTelemetry",
+      "Reliability Engineering",
+      "Incident Resolution Improvement"
+    ]
+  },
+  {
+    "category": "Leadership and Delivery",
+    "skills": [
+      "Technical Strategy",
+      "Architecture Governance",
+      "Cross-Functional Stakeholder Management",
+      "Mentoring and Team Development",
+      "Agile Delivery",
+      "Engineering Quality Standards"
+    ]
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "depot360-platform",
+    "name": "Depot360 EV Fleet Electrification Platform",
+    "timeframe": "2022-2025",
+    "domain": "Electric Vehicle / Energy",
+    "role": "System Architect",
+    "problem": "Needed a secure, resilient, multi-region platform for EV fleet electrification at enterprise scale.",
+    "solution": "Defined cloud-native architecture on AWS and EKS with event-driven microservices, standardized GitOps deployments, and observability-by-default engineering.",
+    "architecture": [
+      "100+ microservices",
+      "Event-driven processing with Kafka",
+      "Container orchestration with EKS",
+      "Infrastructure as Code with Terraform",
+      "GitOps with ArgoCD and Helm",
+      "Observability with Prometheus, Grafana, and ELK"
+    ],
+    "tech": [
+      "AWS",
+      "EKS",
+      "Terraform",
+      "ArgoCD",
+      "Helm",
+      "Java",
+      "Spring Boot",
+      "Kafka",
+      "Redis",
+      "Prometheus",
+      "Grafana",
+      "ELK"
+    ],
+    "impact": [
+      "40% reduction in deployment cycle time",
+      "Improved reliability and global performance posture",
+      "Strengthened security and compliance alignment (ISO27001, GDPR)"
+    ]
+  },
+  {
+    "id": "dems-engineering-modernization",
+    "name": "Distributed Energy Management System Engineering Modernization",
+    "timeframe": "2019-2022",
+    "domain": "Energy",
+    "role": "Software Development Team Lead",
+    "problem": "Development velocity and build efficiency needed improvement for faster delivery.",
+    "solution": "Modernized build and delivery pipelines, including Ant-to-Gradle transition, CI/CD automation, and stronger engineering quality gates.",
+    "architecture": [
+      "Pipeline modernization",
+      "Automated CI/CD",
+      "Containerized test practices",
+      "Quality-first engineering standards"
+    ],
+    "tech": ["Gradle", "CI/CD", "DevSecOps", "Agile"],
+    "impact": [
+      "60% improvement in build and execution efficiency",
+      "Improved delivery predictability and engineering quality"
+    ]
+  },
+  {
+    "id": "telecom-scale-platform-services",
+    "name": "Telecom Platform Modernization and Messaging Services",
+    "timeframe": "2014-2019",
+    "domain": "Telecommunications",
+    "role": "Solutions Architect",
+    "problem": "Legacy systems needed modernization while sustaining massive subscriber scale and strict uptime expectations.",
+    "solution": "Architected modular service components, high-throughput messaging capabilities, and enterprise authentication services for broad platform reuse.",
+    "architecture": [
+      "Modular service decomposition",
+      "Microservices-based capabilities",
+      "High-throughput messaging",
+      "Centralized authentication and OTP services"
+    ],
+    "tech": [
+      "Java",
+      "Microservices",
+      "REST APIs",
+      "Caching",
+      "Authentication",
+      "OTP"
+    ],
+    "impact": [
+      "Platform support for 200M+ subscribers across 38 countries",
+      "100K+ daily SMS and email transactions with traceability",
+      "Etisalat Hero Award received twice"
+    ]
+  },
+  {
+    "id": "iptv-bandwidth-optimization",
+    "name": "IPTV Multicast Session Optimization",
+    "timeframe": "2009-2012",
+    "domain": "Media / Telecommunications",
+    "role": "Senior Software Engineer",
+    "problem": "Idle session handling was consuming unnecessary network bandwidth.",
+    "solution": "Engineered multicast session control architecture to reduce idle network overhead.",
+    "architecture": [
+      "Session lifecycle optimization",
+      "Network-aware multicast controls"
+    ],
+    "tech": ["IPTV", "Performance Engineering", "Distributed Systems"],
+    "impact": ["Up to 80% bandwidth savings for idle session scenarios"]
+  }
+]
