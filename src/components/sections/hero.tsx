@@ -25,7 +25,7 @@ const stackLayers = [
   { label: "Governance", detail: "CCoE : Policy as Code : FinOps" },
   { label: "Platform", detail: "EKS : ArgoCD : Helm" },
   { label: "Infrastructure", detail: "AWS : Terraform : OpenTofu" },
-  { label: "Services", detail: "Java : Spring Boot : Kafka" },
+  { label: "Services", detail: "Java : Spring Boot : Kafka : Redis" },
 ];
 
 export function Hero() {

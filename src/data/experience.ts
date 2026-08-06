@@ -11,7 +11,7 @@ export const impactMetrics: Metric[] = [
   {
     id: "microservice-scale",
     label: "Microservices architected",
-    value: "100+",
+    value: "150+",
     description:
       "Cloud-native service estate designed on AWS and EKS for a multi-region EV electrification platform.",
   },

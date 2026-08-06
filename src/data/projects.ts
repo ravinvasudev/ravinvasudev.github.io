@@ -2,10 +2,43 @@ import type { ProjectItem } from "../types";
 
 export const projects: ProjectItem[] = [
   {
+    id: "ccoe-governance-platform",
+    name: "Cloud Center of Excellence Governance Framework",
+    timeframe: "2025 - Present",
+    domain: "Enterprise Cloud Governance",
+    role: "Cloud Architect (CCoE)",
+    problem:
+      "Independent product organizations were each solving landing zones, IAM boundaries, tagging and cost accountability differently, producing inconsistent risk posture and unpredictable cloud spend.",
+    solution:
+      "Established a CCoE operating model combining landing zone blueprints, reusable Infrastructure as Code modules, policy-as-code guardrails and FinOps reporting so teams inherit compliance instead of rebuilding it.",
+    impact: [
+      "Single governed baseline for multi-account AWS estates",
+      "Architecture decisions captured as reusable, versioned modules",
+      "Cost accountability moved to teams through tagging and showback",
+    ],
+    architecture: [
+      "Multi-account landing zone blueprints",
+      "Policy-as-code guardrails at the organization boundary",
+      "Shared Terraform / OpenTofu module registry",
+      "Standardized identity, network and tagging baselines",
+      "FinOps reporting and cost anomaly signals",
+    ],
+    techStack: [
+      "AWS",
+      "Terraform",
+      "OpenTofu",
+      "Policy as Code",
+      "FinOps",
+      "IAM",
+      "DevSecOps",
+    ],
+    featured: true,
+  },
+  {
     id: "depot360-platform",
     name: "Depot360 EV Fleet Electrification Platform",
     timeframe: "2022 - 2025",
-    domain: "Electric Vehicle / Energy",
+    domain: "Electric Vehicle",
     role: "System Architect",
     problem:
       "Fleet operators needed a secure, resilient, multi-region platform to plan and run depot electrification, but the delivery model could not sustain enterprise scale or regional compliance requirements.",
@@ -41,37 +74,26 @@ export const projects: ProjectItem[] = [
     featured: true,
   },
   {
-    id: "ccoe-governance-platform",
-    name: "Cloud Center of Excellence Governance Framework",
-    timeframe: "2025 - Present",
-    domain: "Enterprise Cloud Governance",
-    role: "Cloud Architect (CCoE)",
+    id: "dems-engineering-modernization",
+    name: "Distributed Energy Management System Engineering Modernization",
+    timeframe: "2019 - 2022",
+    domain: "Energy",
+    role: "Software Development Team Lead",
     problem:
-      "Independent product organizations were each solving landing zones, IAM boundaries, tagging and cost accountability differently, producing inconsistent risk posture and unpredictable cloud spend.",
+      "Slow builds and manual release steps were throttling delivery velocity for grid-scale energy management software.",
     solution:
-      "Established a CCoE operating model combining landing zone blueprints, reusable Infrastructure as Code modules, policy-as-code guardrails and FinOps reporting so teams inherit compliance instead of rebuilding it.",
+      "Modernized build and delivery pipelines through an Ant to Gradle transition, CI/CD automation and enforced engineering quality gates.",
     impact: [
-      "Single governed baseline for multi-account AWS estates",
-      "Architecture decisions captured as reusable, versioned modules",
-      "Cost accountability moved to teams through tagging and showback",
+      "60% improvement in build and execution efficiency",
+      "Higher delivery predictability and defect containment",
     ],
     architecture: [
-      "Multi-account landing zone blueprints",
-      "Policy-as-code guardrails at the organization boundary",
-      "Shared Terraform / OpenTofu module registry",
-      "Standardized identity, network and tagging baselines",
-      "FinOps reporting and cost anomaly signals",
+      "Gradle build modernization with dependency caching",
+      "Automated CI/CD pipelines with quality gates",
+      "Containerized test execution",
     ],
-    techStack: [
-      "AWS",
-      "Terraform",
-      "OpenTofu",
-      "Policy as Code",
-      "FinOps",
-      "IAM",
-      "DevSecOps",
-    ],
-    featured: true,
+    techStack: ["Gradle", "CI/CD", "DevSecOps", "Agile", "Java"],
+    featured: false,
   },
   {
     id: "telecom-scale-platform-services",
@@ -104,28 +126,7 @@ export const projects: ProjectItem[] = [
     ],
     featured: true,
   },
-  {
-    id: "dems-engineering-modernization",
-    name: "Distributed Energy Management System Engineering Modernization",
-    timeframe: "2019 - 2022",
-    domain: "Energy",
-    role: "Software Development Team Lead",
-    problem:
-      "Slow builds and manual release steps were throttling delivery velocity for grid-scale energy management software.",
-    solution:
-      "Modernized build and delivery pipelines through an Ant to Gradle transition, CI/CD automation and enforced engineering quality gates.",
-    impact: [
-      "60% improvement in build and execution efficiency",
-      "Higher delivery predictability and defect containment",
-    ],
-    architecture: [
-      "Gradle build modernization with dependency caching",
-      "Automated CI/CD pipelines with quality gates",
-      "Containerized test execution",
-    ],
-    techStack: ["Gradle", "CI/CD", "DevSecOps", "Agile", "Java"],
-    featured: false,
-  },
+
   {
     id: "iptv-bandwidth-optimization",
     name: "IPTV Multicast Session Optimization",

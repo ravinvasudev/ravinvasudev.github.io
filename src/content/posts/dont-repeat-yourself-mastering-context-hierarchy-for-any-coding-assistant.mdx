@@ -1,0 +1,146 @@
+---
+title: "Don't repeat Yourself: Mastering Context Hierarchy for Any Coding Assistant"
+publishedAt: "2026-02-28"
+summary: "Most teams are adding AI into their workflow. Very few are redesigning their repositories for AI. If you find yourself repeating your tech stack, architecture, and coding standards every time you use an AI assistant, the issue is not the model. It is missing structure.
+
+In this article, I break down a simple, tool-agnostic pattern for building AI-ready repositories using layered context. The approach works with any coding assistant. The goal is straightforward:
+
+- Less prompting.
+- Fewer corrections.
+- More consistent output.
+
+If AI is becoming part of your engineering workflow, your repository design should evolve with it."
+tags: ["AI Coding", "Learn AI", "AI", "ResponsibleAI", "GoogleAIEssentials"]
+canonicalUrl: "https://ravinvasudev.com/blog/dont-repeat-yourself-mastering-context-hierarchy-for-any-coding-assistant"
+featured: true
+---
+
+We are watching a quiet shift in how developers use AI. It is moving from **“AI as a search engine”** to **“AI as a context-aware teammate.”** And the difference between the two is not prompts. It is **instruction hierarchy**.
+
+If you have ever caught yourself repeatedly explaining your tech stack, naming conventions, or architecture to AI, you are not doing it wrong. You are just missing the **_right structure_**.
+
+This article outlines a **tool-agnostic context hierarchy pattern**, using Gemini as a practical example.
+
+---
+
+## The Real Problem: Generic AI Creates Technical Debt
+
+When AI has no project context, it defaults to averages.
+
+- Suggests npm when your org standard is pnpm
+
+- Recommends class components in a hooks-only codebase
+
+- Ignores your architectural boundaries and testing strategy
+
+Each suggestion may look harmless. Over time, they compound into **inconsistent code and review friction**. That is technical debt, just generated faster.
+
+---
+
+## The Solution: Layered Context Strategy
+
+High-performing AI assistants are not smarter. They are **better instructed**. Gemini for VS Code for an example; supports a **hierarchical instruction model** that mirrors how teams actually work: general standards at the top, specialized rules closer to the code.
+
+**Note:** This pattern works with any AI tool that can read repository files.
+
+---
+
+### The Foundation: Repository-Level Context
+
+Think of this as your project’s **source of truth**. This is not about tasks. It is about **non-negotiables**. Include things like:
+
+- Tech stack and package managers
+
+- Architectural principles (Clean Architecture, Hexagonal, etc.)
+
+- Language constraints (TypeScript strict mode, ESLint rules)
+
+- Testing philosophy
+
+- Code style constraints
+
+- Security expectations
+
+### Implementation (Tool-Agnostic)
+
+Create a persistent file such as:
+
+- AI_CONTEXT.md
+
+- ENGINEERING_STANDARDS.md
+
+- ARCHITECTURE.md
+
+With Gemini, this would be implemented via a GEMINI.md file at the project root, which acts as the global instruction layer.
+
+---
+
+### Domain Layer: Folder-Level Instructions
+
+AI tools respects **instruction proximity**. You can place additional **\*.md** files inside folders like:
+
+- /src/components/README.md for UI patterns and styling rules
+
+- /src/api/CONTRACTS.md for backend contracts and error handling
+
+- /src/hooks/RULES.md for composition and naming conventions
+
+The closer the file is to what you are editing, the higher its priority. This is how you teach AI **contextual judgment**, not just rules.
+
+---
+
+### Task Layer: Immediate Prompt Authority
+
+The current request always overrides static rules. Your direct instruction to the AI remains the highest authority. Across tools, the typical priority is:
+
+1. Direct prompt
+
+2. Folder-level instructions
+
+3. Root-level instructions
+
+Understanding this prevents accidental rule conflicts.
+
+---
+
+## The Automation Layer: .github/instructions
+
+This is where things get powerful for teams. Using YAML frontmatter files in .github/instructions, you can define **triggers**. For example:
+
+- When opening \*.test.ts, activate Vitest-specific rules
+
+- When editing API routes, apply validation and logging standards
+
+The benefit is focus. The AI only loads the rules relevant to the task at hand.
+
+---
+
+## Best Practices That Actually Improve Output
+
+A few principles make the system work consistently:
+
+1. **Write in Markdown** Clear headers help the AI parse intent quickly.
+
+2. **Be Directive, Not Suggestive** “Always use hooks” works better than “Try to use hooks.”
+
+3. **Understand the Priority Order**
+
+When rules conflict, the closest and most direct instruction wins.
+
+---
+
+## The Payoff: Less Prompting, More Coding
+
+Once configured, the experience changes. You stop explaining. You stop correcting. You stop re-litigating standards.
+
+You can simply say: **“Refactor this component.”** The AI already knows:
+
+- Which libraries are allowed
+
+- How styling should be handled
+
+- Where tests belong
+
+- What patterns are acceptable
+
+That is when AI becomes a teammate, not a chatbot. **_AI should understand how you code, not just how to code._**

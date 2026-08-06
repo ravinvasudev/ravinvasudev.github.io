@@ -14,13 +14,13 @@ export function ImpactStrip() {
           Outcomes before adjectives
         </h2>
 
-        <ul className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible lg:grid-cols-6">
+        <ul className="mt-8 flex items-stretch snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible lg:grid-cols-6">
           {impactMetrics.map((metric, index) => (
             <li
               key={metric.id}
-              className="min-w-[220px] shrink-0 snap-start md:min-w-0"
+              className="min-w-[220px] shrink-0 snap-start self-stretch md:min-w-0"
             >
-              <Reveal delay={index * 0.05}>
+              <Reveal delay={index * 0.05} className="h-full">
                 <article className="surface-card h-full p-5">
                   <p className="metric-value text-3xl">{metric.value}</p>
                   <p className="mt-2 text-sm font-semibold text-ink">

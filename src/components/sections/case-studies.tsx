@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { projects } from "../../data/projects";
@@ -50,11 +49,11 @@ export function CaseStudies() {
                     </h3>
                     <p className="mt-1 text-sm text-muted">{project.role}</p>
                   </div>
-                  {project.featured ? (
+                  {/* {project.featured ? (
                     <span className="chip border-gold/40 text-gold">
                       Featured
                     </span>
-                  ) : null}
+                  ) : null} */}
                 </div>
 
                 <dl className="mt-5 space-y-4 text-sm leading-relaxed">
@@ -97,45 +96,24 @@ export function CaseStudies() {
 
                 {project.architecture.length > 0 ? (
                   <>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setExpandedId(expanded ? null : project.id)
-                      }
-                      aria-expanded={expanded}
-                      aria-controls={`${project.id}-architecture`}
-                      className="mt-6 inline-flex items-center gap-2 self-start rounded-full border border-hairline px-4 py-2 text-xs font-semibold text-muted transition-colors hover:border-cobalt/60 hover:text-ink"
-                    >
-                      {expanded ? "Hide architecture" : "View architecture"}
-                      <ChevronDown
-                        size={14}
-                        className={cn(
-                          "transition-transform duration-200",
-                          expanded && "rotate-180",
-                        )}
-                      />
-                    </button>
-
                     <AnimatePresence initial={false}>
-                      {expanded ? (
-                        <motion.ul
-                          id={`${project.id}-architecture`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.28, ease: "easeOut" }}
-                          className="mt-4 space-y-2 overflow-hidden"
-                        >
-                          {project.architecture.map((layer) => (
-                            <li
-                              key={layer}
-                              className="rounded-lg border border-hairline bg-white/[0.03] px-3 py-2 font-mono text-[12px] text-muted"
-                            >
-                              {layer}
-                            </li>
-                          ))}
-                        </motion.ul>
-                      ) : null}
+                      <motion.ul
+                        id={`${project.id}-architecture`}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.28, ease: "easeOut" }}
+                        className="mt-4 space-y-2 overflow-hidden"
+                      >
+                        {project.architecture.map((layer) => (
+                          <li
+                            key={layer}
+                            className="rounded-lg border border-hairline bg-white/[0.03] px-3 py-2 font-mono text-[12px] text-muted"
+                          >
+                            {layer}
+                          </li>
+                        ))}
+                      </motion.ul>
                     </AnimatePresence>
                   </>
                 ) : null}
