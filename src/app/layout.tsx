@@ -135,6 +135,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${heading.variable} ${body.variable} ${mono.variable}`}
     >
+      <head>
+        <meta
+          name="google-site-verification"
+          content="iN7JncO72tNiNQgWI4Lq_EPs15pMLVeeXDK4K1wgXUU"
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"
