@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   };
 
   return (
-    <article className="py-16">
+    <article className="py-24">
       <div className="shell max-w-3xl">
         <Link
           href="/blog"

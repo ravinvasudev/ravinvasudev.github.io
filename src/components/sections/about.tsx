@@ -7,7 +7,7 @@ import { SectionHeading } from "../ui/section-heading";
 
 export function About() {
   return (
-    <section id="about" className="border-b border-hairline py-16">
+    <section id="about" className="border-b border-hairline py-24">
       <div className="shell">
         <SectionHeading
           kicker="Executive Narrative"

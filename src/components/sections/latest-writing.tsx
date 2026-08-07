@@ -16,7 +16,7 @@ export function LatestWriting({ posts }: LatestWritingProps) {
   }
 
   return (
-    <section id="writing" className="border-b border-hairline py-16">
+    <section id="writing" className="border-b border-hairline py-24">
       <div className="shell">
         <SectionHeading
           kicker="Thought Leadership"

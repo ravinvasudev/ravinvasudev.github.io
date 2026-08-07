@@ -14,7 +14,7 @@ export default async function BlogPage() {
   const [posts, tags] = await Promise.all([getPosts(), getAllTags()]);
 
   return (
-    <section className="py-16">
+    <section className="py-24">
       <div className="shell">
         <p className="kicker">Engineering Notes</p>
         <h1 className="mt-3 text-3xl font-bold sm:text-4xl">

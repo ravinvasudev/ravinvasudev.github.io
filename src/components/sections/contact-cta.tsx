@@ -5,7 +5,7 @@ import { ButtonLink } from "../ui/button-link";
 
 export function ContactCta() {
   return (
-    <section id="contact" className="py-16">
+    <section id="contact" className="py-24">
       <div className="shell">
         <div className="surface-card relative overflow-hidden p-8 sm:p-12">
           <div

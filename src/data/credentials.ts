@@ -2,12 +2,20 @@ import type { Achievement, EducationItem } from "../types";
 
 export const achievements: Achievement[] = [
   {
+    id: "siemens-noc-star-awards",
+    title: "Siemens Innovation Week - NOC AI Agent",
+    organization: "Siemens Canada Limited",
+    timeframe: "2024 - 2025",
+    description:
+      "Awarded for designing and building an agentic AI workflow using n8n that autonomously monitors, triages, and resolves incidents.",
+  },
+  {
     id: "siemens-star-awards",
     title: "Siemens STAR Award (multiple)",
     organization: "Siemens Canada Limited",
-    timeframe: "2022 - 2025",
+    timeframe: "2019 - 2025",
     description:
-      "Recognized repeatedly for technical leadership and measurable platform impact on the Depot360 program.",
+      "Recognized repeatedly for technical leadership and measurable platform impact on the Depot360 and DEMS.",
   },
   {
     id: "etisalat-hero-award",

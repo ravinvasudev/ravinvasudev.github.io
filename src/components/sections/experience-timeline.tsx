@@ -11,7 +11,7 @@ export function ExperienceTimeline() {
   }
 
   return (
-    <section id="experience" className="border-b border-hairline py-16">
+    <section id="experience" className="border-b border-hairline py-24">
       <div className="shell">
         <SectionHeading
           kicker="Career Trajectory"

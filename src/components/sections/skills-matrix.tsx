@@ -22,7 +22,7 @@ export function SkillsMatrix() {
       : skills.filter((category) => category.id === activeId);
 
   return (
-    <section id="skills" className="border-b border-hairline py-16">
+    <section id="skills" className="border-b border-hairline py-24">
       <div className="shell">
         <SectionHeading
           kicker="Capability Matrix"

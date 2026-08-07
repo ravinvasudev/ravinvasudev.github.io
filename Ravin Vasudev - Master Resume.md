@@ -97,13 +97,20 @@ Combines deep software engineering foundations with hands-on cloud architecture,
 
 ### Etisalat Software Solutions Pvt Ltd | Dubai, UAE
 
-#### Solutions Architect | Aug 2014 - Feb 2019
+#### Solutions Architect | Jan 2017 - Feb 2019
 
-- Architected telecom platform components supporting 200+ million subscribers across 38 countries while meeting strict uptime and performance expectations.
+- Owned solution architecture and platform design for telecom capabilities serving 200+ million subscribers across 38 countries.
+- Converted business and scale requirements into modular service designs and API contracts.
 - Led modernization of legacy monoliths into modular and microservices-based architectures.
-- Designed and implemented high-throughput messaging platforms handling 100K+ daily SMS and email transactions with end-to-end traceability.
-- Developed enterprise authentication and OTP services adopted across customer-facing applications.
+- Partnered with engineering teams to deliver high-throughput messaging and authentication platforms, contributing code to critical modules when needed.
 - Received the Etisalat Hero Award twice for innovation and delivery excellence.
+
+#### Software Development Tech Lead | Aug 2014 - Dec 2016
+
+- Led hands-on engineering delivery for telecom platform services at global subscriber scale.
+- Wrote and reviewed production code for Java and Spring services, REST APIs, caching layers, and integration workflows.
+- Drove early modernization from monolithic components toward modular service boundaries.
+- Built foundational messaging, authentication, and OTP capabilities that were extended in the subsequent Solutions Architect phase.
 
 ### Ericsson India Global Services Pvt Ltd | Gurgaon, India
 

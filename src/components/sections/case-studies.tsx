@@ -18,7 +18,7 @@ export function CaseStudies() {
   }
 
   return (
-    <section id="projects" className="border-b border-hairline py-16">
+    <section id="projects" className="border-b border-hairline py-24">
       <div className="shell">
         <SectionHeading
           kicker="Architecture Case Studies"

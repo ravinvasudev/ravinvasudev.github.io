@@ -23,19 +23,10 @@ const item: Variants = {
 };
 
 const stackLayers = [
-  {
-    label: "Governance",
-    detail: "CCoE : Policy as Code : FinOps : Risk Controls",
-  },
-  {
-    label: "IaC Foundation",
-    detail: "Landing Zones : Terraform : OpenTofu : Reusable Modules",
-  },
-  {
-    label: "Platform Delivery",
-    detail: "AWS : Kubernetes (EKS) : ArgoCD : DevSecOps",
-  },
-  { label: "Services & Data", detail: "Java : Spring Boot : Kafka : Redis" },
+  { label: "Governance", detail: "CCoE : Policy as Code : FinOps" },
+  { label: "Platform", detail: "EKS : ArgoCD : Helm" },
+  { label: "Infrastructure", detail: "AWS : Terraform : OpenTofu" },
+  { label: "Services", detail: "Java : Spring Boot : Kafka : Redis" },
 ];
 
 export function Hero() {
@@ -77,30 +68,47 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-10 max-w-2xl text-lg leading-relaxed text-ink/90 sm:text-xl"
+            className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/90 sm:text-xl"
           >
             {profile.positioningStatement}
           </motion.p>
 
           <motion.p
             variants={item}
-            className="mt-5 max-w-2xl text-sm leading-relaxed text-muted sm:text-base"
+            className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base"
           >
             {profile.recruiterSummary}
           </motion.p>
 
-          <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">
+          <motion.dl
+            variants={item}
+            className="mt-8 grid grid-cols-3 gap-4 border-y border-hairline py-5"
+          >
+            {headlineMetrics.map((metric) => (
+              <div key={metric.id}>
+                <dt className="sr-only">{metric.label}</dt>
+                <dd className="metric-value text-2xl sm:text-3xl">
+                  {metric.value}
+                </dd>
+                <p className="mt-1 text-xs leading-snug text-muted">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </motion.dl>
+
+          <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href={profile.resumeUrl} external>
-              <Download size={12} />
-              <span className="hidden sm:inline">Download Resume</span>
+              <Download size={16} />
+              Download Resume
             </ButtonLink>
             <ButtonLink href={profile.socials.linkedin} variant="outline">
-              <Linkedin size={12} />
-              <span className="hidden sm:inline">Connect on LinkedIn</span>
+              <Linkedin size={16} />
+              Connect on LinkedIn
             </ButtonLink>
-            <ButtonLink href="/blog" variant="outline">
-              <Notebook size={12} />
-              <span className="hidden sm:inline">Technical Articles</span>
+            <ButtonLink href="/blog" variant="ghost">
+              <Notebook size={16} />
+              Explore Technical Articles
             </ButtonLink>
           </motion.div>
         </motion.div>
@@ -136,13 +144,13 @@ export function Hero() {
             ))}
           </div>
 
-          {/* <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-wrap gap-2">
             {profile.industries.map((industry) => (
               <span key={industry} className="chip">
                 {industry}
               </span>
             ))}
-          </div> */}
+          </div>
         </motion.div>
       </div>
 
