@@ -5,7 +5,7 @@ Email: ravinvasudev@gmail.com | Phone: 5062305156 | LinkedIn: https://www.linked
 
 ## PROFESSIONAL HEADLINE
 
-Principal Cloud and Platform Architect
+Cloud and Platform Architect
 
 ## EXECUTIVE SUMMARY
 
@@ -50,8 +50,8 @@ Combines deep software engineering foundations with hands-on cloud architecture,
 
 - Microservices
 - Event-Driven Architecture (Kafka)
-- Java, Spring Boot, Python, TypeScript
-- REST and gRPC APIs
+- Java, Spring Boot, TypeScript
+- REST APIs
 - Redis, SQL, NoSQL
 - API-First Design
 - Authentication and IAM (including SSO and OTP services)
@@ -59,7 +59,7 @@ Combines deep software engineering foundations with hands-on cloud architecture,
 ### Operational Excellence and Leadership
 
 - FinOps and Cloud Cost Optimization
-- Observability (Prometheus, Grafana, ELK, OpenTelemetry)
+- Observability (Prometheus, Grafana, ELK, Sumologic)
 - Reliability Engineering
 - Technical Strategy and Governance
 - Cross-Functional Stakeholder Management
@@ -141,4 +141,4 @@ Combines deep software engineering foundations with hands-on cloud architecture,
 
 ## TECHNOLOGY SUMMARY
 
-AWS, Kubernetes (EKS), Terraform, Docker, GitOps, ArgoCD, Helm, Java, Spring Boot, Python, TypeScript, Kafka, Redis, REST, gRPC, Prometheus, Grafana, ELK, OpenTelemetry, FinOps, DevSecOps, Cloud Governance, Platform Engineering, Distributed Systems
+AWS, Kubernetes (EKS), Terraform, Docker, GitOps, ArgoCD, Helm, Java, Spring Boot, TypeScript, Kafka, Redis, REST, Prometheus, Grafana, ELK, Sumologic, FinOps, DevSecOps, Cloud Governance, Platform Engineering, Distributed Systems

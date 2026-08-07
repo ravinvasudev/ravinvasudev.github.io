@@ -32,11 +32,25 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
   title: {
     default: `${profile.name} | ${profile.title}`,
     template: `%s | ${profile.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "Cloud Architect",
+    "Systems Architect",
+    "Cloud Center of Excellence",
+    "AWS",
+    "Kubernetes",
+    "Terraform",
+    "Platform Engineering",
+    "Enterprise Architecture",
+  ],
+  authors: [{ name: profile.name, url: siteConfig.url }],
+  creator: profile.name,
+  publisher: profile.name,
   alternates: {
     canonical: "/",
     types: { "application/rss+xml": `${siteConfig.url}/feed.xml` },
@@ -47,13 +61,32 @@ export const metadata: Metadata = {
     siteName: siteConfig.shortName,
     title: `${profile.name} | ${profile.title}`,
     description: siteConfig.description,
+    images: [
+      {
+        url: `${siteConfig.url}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} | ${profile.title}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} | ${profile.title}`,
     description: siteConfig.description,
+    images: [`${siteConfig.url}/opengraph-image`],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 const personSchema = {

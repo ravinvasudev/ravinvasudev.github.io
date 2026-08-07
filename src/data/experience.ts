@@ -11,7 +11,7 @@ export const impactMetrics: Metric[] = [
   {
     id: "microservice-scale",
     label: "Microservices architected",
-    value: "150+",
+    value: "100+",
     description:
       "Cloud-native service estate designed on AWS and EKS for a multi-region EV electrification platform.",
   },
@@ -93,7 +93,7 @@ export const experience: ExperienceItem[] = [
       "Owned architecture strategy and the technical roadmap for Depot360, a multi-region EV fleet electrification platform.",
     highlights: [
       "Defined the cloud-native architecture for 100+ microservices running on AWS and EKS.",
-      "Led and mentored 4 cross-functional teams totalling 20+ engineers.",
+      "Led and mentored 4 cross-functional teams totalling 15+ engineers.",
       "Standardized infrastructure and delivery on Terraform, Helm and ArgoCD GitOps workflows.",
       "Designed event-driven services with Java, Spring Boot, Kafka and Redis for real-time telemetry processing.",
       "Implemented full-stack observability with Prometheus, Grafana and ELK.",
@@ -101,7 +101,7 @@ export const experience: ExperienceItem[] = [
     metrics: [
       "40% reduction in deployment cycle time",
       "100+ microservices under one architecture standard",
-      "20+ engineers across 4 teams mentored",
+      "15+ engineers across 4 teams mentored",
     ],
     techStack: [
       "AWS",
@@ -131,8 +131,8 @@ export const experience: ExperienceItem[] = [
     highlights: [
       "Developed next-generation Distributed Energy Management System (DEMS) to orchestrate distributed assets across the grid.",
       "Contributed to feature development and system enhancements while collaborating with cross-functional teams.",
-      "Spearheaded build and pipeline modernization, pushing build improvements by 50% including the Ant to Gradle migration and CI/CD automation.",
-      "Mentored 10+ engineers on agile engineering, DevSecOps adoption and quality-first delivery practices.",
+      "Spearheaded build and pipeline modernization, pushing build improvements by 60% including the Ant to Gradle migration and CI/CD automation.",
+      "Mentored 15+ engineers on agile engineering, DevSecOps adoption and quality-first delivery practices.",
     ],
     metrics: [
       "60% improvement in build and execution efficiency",
@@ -202,7 +202,7 @@ export const experience: ExperienceItem[] = [
       "Caching",
       "System Design",
       "SMS",
-      "USD",
+      "USSD",
     ],
   },
   {

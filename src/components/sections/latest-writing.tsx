@@ -20,8 +20,7 @@ export function LatestWriting({ posts }: LatestWritingProps) {
       <div className="shell">
         <SectionHeading
           kicker="Thought Leadership"
-          title="Technical articles and architecture notes"
-          description="Long-form breakdowns of governance models, platform patterns and the tradeoffs behind them."
+          title="Latest technical articles and architecture notes"
           action={
             <ButtonLink href="/blog" variant="outline">
               All articles

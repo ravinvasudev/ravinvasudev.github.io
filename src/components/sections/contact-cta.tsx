@@ -20,8 +20,7 @@ export function ContactCta() {
               reference implementation?
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
-              {profile.location} : {profile.totalExperience} across{" "}
-              {profile.industries.join(", ")}.
+              {profile.location}.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">

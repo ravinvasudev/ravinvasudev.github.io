@@ -42,7 +42,6 @@ export const skills: SkillCategory[] = [
       "Kafka",
       "API-First Design",
       "REST",
-      "gRPC",
       "Multi-Tenant SaaS",
       "High Availability Design",
     ],
@@ -54,7 +53,6 @@ export const skills: SkillCategory[] = [
     skills: [
       "Java",
       "Spring Boot",
-      "Python",
       "TypeScript",
       "Redis",
       "SQL",
@@ -70,7 +68,6 @@ export const skills: SkillCategory[] = [
       "Prometheus",
       "Grafana",
       "ELK",
-      "OpenTelemetry",
       "Sumologic",
       "SLO Engineering",
       "Incident Response",

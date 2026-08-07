@@ -10,8 +10,8 @@ export function About() {
     <section id="about" className="border-b border-hairline py-24">
       <div className="shell">
         <SectionHeading
-          kicker="Executive Narrative"
-          title="How the architecture practice was built"
+          kicker="Professional Story"
+          title="From engineer to enterprise architect"
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_1fr]">

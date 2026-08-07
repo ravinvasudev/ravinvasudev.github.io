@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import { PostDirectory } from "../../components/blog/post-directory";
+import { profile } from "../../data/profile";
+import { siteConfig } from "../../data/site";
 import { getAllTags, getPosts } from "../../lib/posts";
 
 export const metadata: Metadata = {
@@ -8,6 +10,28 @@ export const metadata: Metadata = {
   description:
     "Architecture deep-dives on cloud governance, platform engineering, Kubernetes delivery and distributed systems by Ravin Vasudev.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: `${siteConfig.url}/blog`,
+    title: `Technical Articles | ${profile.name}`,
+    description:
+      "Architecture deep-dives on cloud governance, platform engineering, Kubernetes delivery and distributed systems by Ravin Vasudev.",
+    images: [
+      {
+        url: `${siteConfig.url}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `Technical Articles | ${profile.name}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Technical Articles | ${profile.name}`,
+    description:
+      "Architecture deep-dives on cloud governance, platform engineering, Kubernetes delivery and distributed systems by Ravin Vasudev.",
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 export default async function BlogPage() {

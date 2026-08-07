@@ -23,7 +23,6 @@ export function CaseStudies() {
         <SectionHeading
           kicker="Architecture Case Studies"
           title="Systems designed, delivered and measured"
-          description="Each engagement is framed the way an engineering leader reviews it: the problem, the architectural response, and the measurable result."
         />
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">

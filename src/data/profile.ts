@@ -2,7 +2,7 @@ import type { Profile } from "../types";
 
 export const profile: Profile = {
   name: "Ravin Vasudev",
-  title: "Principal Cloud and Platform Architect",
+  title: "Cloud and Platform Architect",
   location: "Fredericton, New Brunswick, Canada",
   totalExperience: "19+ years",
   positioningStatement:

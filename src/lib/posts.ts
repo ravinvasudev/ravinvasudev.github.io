@@ -8,6 +8,46 @@ import type { Post, PostFrontmatter, PostWithContent } from "../types";
 const POSTS_DIRECTORY = path.join(process.cwd(), "src", "content", "posts");
 const WORDS_PER_MINUTE = 220;
 
+function normalizeSlug(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function getCanonicalSlug(canonicalUrl: string): string | null {
+  if (!canonicalUrl) {
+    return null;
+  }
+
+  try {
+    const pathname = new URL(canonicalUrl).pathname;
+    const segments = pathname.split("/").filter(Boolean);
+
+    if (segments.length >= 2 && segments[0] === "blog") {
+      return segments.at(-1) ?? null;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function getBaseSlug(fileName: string): string {
+  return fileName.replace(/\.mdx?$/, "");
+}
+
+function getPublicSlug(fileName: string, canonicalUrl: string): string {
+  const canonicalSlug = getCanonicalSlug(canonicalUrl);
+  if (canonicalSlug) {
+    return canonicalSlug;
+  }
+
+  return normalizeSlug(getBaseSlug(fileName));
+}
+
 function estimateReadingMinutes(content: string): number {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
@@ -37,21 +77,26 @@ async function readPostFiles(): Promise<string[]> {
 
 export async function getPost(slug: string): Promise<PostWithContent | null> {
   const files = await readPostFiles();
-  const fileName = files.find((entry) => entry.replace(/\.mdx?$/, "") === slug);
+  for (const fileName of files) {
+    const raw = await fs.readFile(path.join(POSTS_DIRECTORY, fileName), "utf8");
+    const { data, content } = matter(raw);
+    const frontmatter = toFrontmatter(data);
+    const publicSlug = getPublicSlug(fileName, frontmatter.canonicalUrl);
+    const legacySlug = getBaseSlug(fileName);
 
-  if (!fileName) {
-    return null;
+    if (slug !== publicSlug && slug !== legacySlug) {
+      continue;
+    }
+
+    return {
+      ...frontmatter,
+      slug: publicSlug,
+      readingMinutes: estimateReadingMinutes(content),
+      content,
+    };
   }
 
-  const raw = await fs.readFile(path.join(POSTS_DIRECTORY, fileName), "utf8");
-  const { data, content } = matter(raw);
-
-  return {
-    ...toFrontmatter(data),
-    slug,
-    readingMinutes: estimateReadingMinutes(content),
-    content,
-  };
+  return null;
 }
 
 export async function getPosts(): Promise<Post[]> {
@@ -67,7 +112,7 @@ export async function getPosts(): Promise<Post[]> {
 
       return {
         ...toFrontmatter(data),
-        slug: fileName.replace(/\.mdx?$/, ""),
+        slug: getPublicSlug(fileName, String(data.canonicalUrl ?? "")),
         readingMinutes: estimateReadingMinutes(content),
       } satisfies Post;
     }),

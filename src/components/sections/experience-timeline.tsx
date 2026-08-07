@@ -16,7 +16,6 @@ export function ExperienceTimeline() {
         <SectionHeading
           kicker="Career Trajectory"
           title="From core software engineering to cloud architecture leadership"
-          description="A continuous progression across electric vehicle, energy, telecommunications and financial services platforms."
         />
 
         <ol className="mt-10 space-y-5">

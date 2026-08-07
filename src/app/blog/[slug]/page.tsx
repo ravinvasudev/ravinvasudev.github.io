@@ -28,11 +28,13 @@ export async function generateMetadata({
     return { title: "Article not found" };
   }
 
-  const url = `${siteConfig.url}/blog/${post.slug}`;
+  const url = post.canonicalUrl || `${siteConfig.url}/blog/${post.slug}`;
 
   return {
     title: post.title,
     description: post.summary,
+    keywords: post.tags,
+    authors: [{ name: profile.name, url: siteConfig.url }],
     alternates: { canonical: post.canonicalUrl || url },
     openGraph: {
       type: "article",
@@ -42,11 +44,20 @@ export async function generateMetadata({
       publishedTime: post.publishedAt,
       authors: [profile.name],
       tags: post.tags,
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.summary,
+      images: [`${siteConfig.url}/opengraph-image`],
     },
   };
 }
@@ -59,17 +70,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const url = `${siteConfig.url}/blog/${post.slug}`;
+  const url = post.canonicalUrl || `${siteConfig.url}/blog/${post.slug}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.summary,
+    url,
     datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
     keywords: post.tags.join(", "),
     mainEntityOfPage: post.canonicalUrl || url,
+    inLanguage: "en",
     author: {
+      "@type": "Person",
+      name: profile.name,
+      url: siteConfig.url,
+    },
+    publisher: {
       "@type": "Person",
       name: profile.name,
       url: siteConfig.url,
