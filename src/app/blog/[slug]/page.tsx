@@ -78,6 +78,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     headline: post.title,
     description: post.summary,
     url,
+    image: `${siteConfig.url}/opengraph-image`,
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     keywords: post.tags.join(", "),
@@ -92,6 +93,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       "@type": "Person",
       name: profile.name,
       url: siteConfig.url,
+      image: `${siteConfig.url}/avatar.jpg`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/avatar.jpg`,
+      },
     },
   };
 

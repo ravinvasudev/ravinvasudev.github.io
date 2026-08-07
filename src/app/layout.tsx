@@ -33,6 +33,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+    apple: [{ url: "/avatar.jpg", sizes: "180x180", type: "image/jpeg" }],
+  },
   title: {
     default: `${profile.name} | ${profile.title}`,
     template: `%s | ${profile.name}`,
@@ -96,6 +101,8 @@ const personSchema = {
   jobTitle: profile.title,
   description: profile.recruiterSummary,
   url: siteConfig.url,
+  image: `${siteConfig.url}/avatar.jpg`,
+  logo: `${siteConfig.url}/avatar.jpg`,
   email: `mailto:${profile.socials.email}`,
   address: {
     "@type": "PostalAddress",
@@ -112,6 +119,14 @@ const personSchema = {
     "Platform Engineering",
     "Distributed Systems",
   ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  image: `${siteConfig.url}/avatar.jpg`,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -135,6 +150,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Analytics />
       </body>
